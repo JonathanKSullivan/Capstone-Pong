@@ -14,8 +14,7 @@ static const SDL_Color getFontColor() {
 }  // namespace
 
 GameObjects::GameObjects()
-    : times(TTF_OpenFont(
-          "third_party/googlefonts/api/monotype/timesnewroman/times.ttf", 14)) {
+    : times(TTF_OpenFont("TIMES.TTF", 14)) {
 }
 
 void GameObjects::Render(SDL_Surface* screen, Uint32 white) {
