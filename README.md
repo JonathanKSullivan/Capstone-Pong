@@ -1,4 +1,6 @@
 # Capstone Pong Game - C++ Nanodegree
+## Description
+For my capstone I made a clone of the first video game ever made, Pong. I written the code in c++ and used the SDL library to render the display. 
 ## Instructions for running the project
 ---
 ### Dependencies for Running Code
@@ -12,9 +14,6 @@
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
-* SDL2
-  * Installation instructions are linked [here](https://wiki.libsdl.org/Installation)
-  
 ### Basic Build Instructions
 1. Clone this repo.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
