@@ -1,14 +1,17 @@
 #ifndef GAME_OBJ_H_
 #define GAME_OBJ_H_
 
-#include "experimental/users/jonsullivan/util.h"
-#include "third_party/SDL/include/third_party/SDL/SDL.h"
-#include "third_party/SDL_ttf/SDL_ttf.h"
+#include <sstream>
+
+#include "util.h"
+#include "SDL.h"
+#include "SDL_ttf.h"
 
 class GameObjects {
  public:
   GameObjects();
   virtual void Render(SDL_Surface* screen, Uint32 white);
+  SDL_Rect GetObj() const;
   virtual ~GameObjects() = default;
 
  protected:
@@ -19,15 +22,15 @@ class GameObjects {
   SDL_Rect obj;
   TTF_Font* times;
 };
-
+class Ball;
 class Paddle : public GameObjects {
-  using GameObjects::Update;
-
  public:
   Paddle(int player_number);
   void Reset();
   virtual void IncrementScore();
-  virtual void Render(SDL_Surface* screen, Uint32 white);
+  virtual void Render(SDL_Surface* screen, Uint32 white, SDL_Renderer* sdlRenderer);
+  virtual void Update(const Uint8* keystates, Ball* ball,
+                          SDL_Event& occur);
 
  protected:
   int score;
@@ -37,29 +40,15 @@ class Paddle : public GameObjects {
   int player_number;
 };
 
-class PlayerPaddle : public Paddle {
-  PlayerPaddle(int player_number);
-  void Update(Uint8* keystates, Ball* ball, const SDL_Event& occur);
-  void Update(Uint8* keystates, const SDL_Event& occur);
-};
-
-class AIPaddle : public Paddle {
- public:
-  AIPaddle(int player_number);
-  void Update(Uint8* keystates, Ball* ball, const SDL_Event& occur);
-  void Update(Ball* ball);
-};
-
 class Ball : public GameObjects {
  public:
   Ball();
   virtual ~Ball() = default;
 
   int get_height() const;
-
   int get_y() const;
 
-  void Update(Paddle* Paddle1, Paddle* Paddle2) override;
+  void Update(Paddle* Paddle1, Paddle* Paddle2);
   virtual void Reset();
 
  private:
@@ -68,5 +57,22 @@ class Ball : public GameObjects {
   int x_vel;
   int y_vel;
 };
+
+class PlayerPaddle : public Paddle {
+ public:
+  PlayerPaddle(int player_number);
+  void Update(const Uint8* keystates, Ball* ball, SDL_Event& occur) 
+    override;
+  void Update(const Uint8* keystates, SDL_Event& occur);
+};
+
+class AIPaddle : public Paddle {
+ public:
+  AIPaddle(int player_number);
+  void Update(const Uint8* keystates, Ball* ball, SDL_Event& occur)
+    override;
+  void Update(Ball* ball);
+};
+
 
 #endif  // GAME_OBJ_H_

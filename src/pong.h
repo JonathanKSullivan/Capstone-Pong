@@ -10,7 +10,7 @@
 class Pong {
  public:
   // Loads game and initializes game environment.
-  Pong(int number_of_players, SDL_Surface* screen, const SDL_Event& occur);
+  Pong(int number_of_players, SDL_Window* screen, const SDL_Event& occur,  SDL_Renderer* sdlRenderer);
 
   // Uninitializes game environment.
   ~Pong();
@@ -18,7 +18,7 @@ class Pong {
   void Update();
 
   // Renders pong game objects to screen.
-  void Render();
+  void Render(SDL_Renderer* sdlRenderer);
 
   // Returns true if game is running otherwise false.
   bool GetRunningState() const;
@@ -27,8 +27,8 @@ class Pong {
   void ChangeRunningState();
 
  private:
-  Paddle* Player1;
-  Paddle* Player2;
+  PlayerPaddle* Player1;
+  AIPaddle* Player2;
   Ball* ball;
   Uint32 white;  // Uint32 color
   SDL_Surface* screen;

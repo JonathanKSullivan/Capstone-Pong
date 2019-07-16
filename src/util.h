@@ -1,5 +1,6 @@
 #ifndef UTIL_H_
 #define UTIL_H_
+#include "SDL.h"
 
 // Checks if point (x,y) is located in Rectangle rec
 bool PointInRect(int x, int y, SDL_Rect rec);

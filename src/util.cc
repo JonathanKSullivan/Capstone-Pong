@@ -1,6 +1,6 @@
 #include "util.h"
-
 #include "SDL.h"
+
 
 bool PointInRect(int x, int y, SDL_Rect rec) {
   if (x > rec.x && y > rec.y && x < rec.x + rec.w && y < rec.y + rec.h) {
