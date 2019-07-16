@@ -1,6 +1,7 @@
 # Capstone Pong Game - C++ Nanodegree
 ## Description
-For my capstone I made a clone of the first video game ever made, Pong. I written the code in c++ and used the SDL library to render the display. 
+For my capstone I made a clone of the first video game ever made, Pong. I written the code in c++ and used the SDL library to render the display.
+---
 ## Instructions for running the project
 ---
 ### Dependencies for Running Code
@@ -14,26 +15,31 @@ For my capstone I made a clone of the first video game ever made, Pong. I writte
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
+* SDL and TFF
+  * Linux: sudo apt-get -y install libsdl2-dev libsdl2-ttf-dev libsdl-image1.2-dev libsdl-ttf2.0-dev
+  * Mac/Window: Perform Google Search
+
 ### Basic Build Instructions
 1. Clone this repo.
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./Pong`.
+
 ## Overview of my code structure
 ---
-- [main.cc]()
+- [main.cc](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/main.cc)
 -- Contains the game loop and initializes nessesary dependencies.
-- [pong.h]()
+- [pong.h](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/pong.h)
 -- Hold declaerations of the pong class which is used to represent an instance of a game of pong. 
-- [pong.cc]()
+- [pong.cc](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/pong.cc)
 -- Implementation of `pong.h`. 
-- [game_obj.h]()
+- [game_obj.h](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/game_obj.h)
 -- Hold declaerations of the object used in pong, including abstract objects such as GameObject, Paddle and more concrete examples such as Ball, PlayerPaddle and AIPaddle.
-- [game_obj.cc]()
+- [game_obj.cc](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/game_obj.cc)
 -- Implementation of the classes declared in `game_obj.h`. 
-- [util.h]()
+- [util.h](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/util.h)
 -- Defined several useful helper function used to detect conlisions and to determine the ball's dynamics.
-- [util.cc]()
+- [util.cc](https://github.com/JonathanKSullivan/Capstone-Pong/blob/master/src/util.cc)
 - Implementation of `util.h`.
 ## Explanation of how my submission satisfies the necessary rubric
 ### Loops, Functions, I/O
