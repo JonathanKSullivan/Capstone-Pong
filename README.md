@@ -1,6 +1,8 @@
 # Capstone Pong Game - C++ Nanodegree
 ## Description
-For my capstone I made a clone of the first video game ever made, Pong. I written the code in c++ and used the SDL library to render the display.
+
+For my capstone I made a clone of the first video game ever made, Pong. I wrote the code in c++ and used the SDL library to render the display.
+
 ---
 ## Instructions for running the project
 ---
